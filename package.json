@@ -1,0 +1,11 @@
+{
+  "name": "uber-eats-like-dan",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd front && npm install && npm run build && cd ..",
+    "deploy": "cp -a front/build/. public/",
+    "heroku-postbuild": "npm run build && npm run deploy && echo 'Client built!'"
+  }
+}
