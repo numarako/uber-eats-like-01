@@ -13,5 +13,8 @@ Rails.application.routes.draw do
       put 'line_foods/replace', to: 'line_foods#replace'
       resources :orders, only: %i[create]
     end
-  end 
+  end
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
 end
