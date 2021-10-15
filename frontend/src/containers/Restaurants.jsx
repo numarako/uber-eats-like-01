@@ -43,8 +43,9 @@ const MainCover = styled.img`
 
 const RestaurantsContentsList = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 150px;
+  max-width: 100%;
 `;
 
 const RestaurantsContentWrapper = styled.div`
@@ -100,6 +101,7 @@ export const Restaurants = () => {
         {
           state.fetchState === REQUEST_STATE.LOADING ?
             <Fragment>
+              <Skeleton variant="rect" width={450} height={300} />
               <Skeleton variant="rect" width={450} height={300} />
               <Skeleton variant="rect" width={450} height={300} />
             </Fragment>
