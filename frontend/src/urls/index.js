@@ -1,4 +1,4 @@
-const DEFAULT_API_LOCALHOST = 'http://aqueous-plains-12758.herokuapp.com/api/v1';
+const DEFAULT_API_LOCALHOST = 'https://aqueous-plains-12758.herokuapp.com/api/v1';
 
 export const restaurantsIndex = `${DEFAULT_API_LOCALHOST}/restaurants`;
 export const foodsIndex = (restaurantId) =>
