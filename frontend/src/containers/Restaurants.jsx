@@ -102,7 +102,6 @@ export const Restaurants = () => {
             <Fragment>
               <Skeleton variant="rect" width={450} height={300} />
               <Skeleton variant="rect" width={450} height={300} />
-              <Skeleton variant="rect" width={450} height={300} />
             </Fragment>
             :
             state.restaurantsList.map((item, index) =>
