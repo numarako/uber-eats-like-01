@@ -18,7 +18,7 @@ module Api
        end
 
         if recipe.save
-          @recipe = Recipe.find_by(id:3)
+          @recipe = Recipe.find_by(cost:450)
           render json: {
             message: "Recipe successfully created!",
             recipe: [@recipe]
@@ -48,7 +48,27 @@ module Api
         }, status: :ok
       end
 
+      def update
+        recipe_set = Recipe.find_by(id: params[:id])
+        recipe_set.update(
+          "title": "トマトスープレシピ",
+          "making_time": "15分",
+          "serves": "5人",
+          "ingredients": "玉ねぎ, トマト, スパイス, 水",
+          "cost": "450"
+        )
+        @recipe_update = Recipe.find_by(id: params[:id])
+        render json: {
+          message: "Recipe successfully updated!",
+          recipe: [@recipe_update]
+        }, status: :ok
+      end
 
+      def update
+        recipe_set = Recipe.find_by(id: params[:id])
+        recipe_set.destroy
+        
     end
   end
 end
+
