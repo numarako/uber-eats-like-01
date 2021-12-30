@@ -13,7 +13,7 @@ module Api
           "updated_at": params[:updated_at]
         )
         recipe = params[:recipe]
-       if recipe.nil?
+       if recipe.empty?
         render json: {
           message: "Recipe creation failed!",
           required: "title, making_time, serves, ingredients, cost"
@@ -24,7 +24,7 @@ module Api
           @recipe = Recipe.find_by(id:3)
           render json: {
             message: "Recipe successfully created!",
-            recipe: @recipe
+            recipe: [@recipe]
           }, status: :ok
         else
           render json: {
@@ -47,7 +47,7 @@ module Api
 
         render json: {
           message: "Recipe details by id",
-          recipe: @recipe_detail
+          recipe: [@recipe_detail]
         }, status: :ok
       end
 
