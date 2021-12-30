@@ -13,8 +13,6 @@ class ApplicationController < ActionController::API
   #      end
   #  end
 
-# NN生命テスト
-=begin
   include ActionController::MimeResponds
   def fallback_index_html
        respond_to do |format|
@@ -22,4 +20,3 @@ class ApplicationController < ActionController::API
        end
   end
 end
-=end
