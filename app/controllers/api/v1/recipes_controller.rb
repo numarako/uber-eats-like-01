@@ -3,14 +3,11 @@ module Api
     class RecipesController < ApplicationController
       def create
         recipe = Recipe.new(
-          "id": params[:id],
           "title": params[:title],
           "making_time": params[:making_time],
           "serves": params[:serves],
           "ingredients": params[:ingredients],
           "cost": params[:cost],
-          "created_at": params[:created_at],
-          "updated_at": params[:updated_at]
         )
         recipe = params[:recipe]
        if recipe.empty?
