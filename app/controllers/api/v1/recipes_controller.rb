@@ -13,12 +13,12 @@ module Api
           render json: {
             message: "Recipe successfully created!",
             recipe: recipe
-          }, status: :200
+          }, status: :ok
         else
           render json: {
             message: "Recipe creation failed!",
             required: "title, making_time, serves, ingredients, cost"
-          }, status: :200
+          }, status: :ok
         end
       end
 
