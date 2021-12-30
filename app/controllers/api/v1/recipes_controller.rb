@@ -63,11 +63,6 @@ module Api
           recipe: [@recipe_update]
         }, status: :ok
       end
-
-      def update
-        recipe_set = Recipe.find_by(id: params[:id])
-        recipe_set.destroy
-        
     end
   end
 end
