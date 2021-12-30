@@ -3,13 +3,17 @@ module Api
     class RecipesController < ApplicationController
       def create
         recipe = Recipe.new(
+          "id": params[:id],
           "title": params[:title],
           "making_time": params[:making_time],
           "serves": params[:serves],
           "ingredients": params[:ingredients],
           "cost": params[:cost],
+          "created_at": params[:created_at],
+          "updated_at": params[:updated_at]
         )
-       if params[:serves].nil?
+        title = params[:title]
+       if title.nil?
         render json: {
           message: "Recipe creation failed!",
           required: "title, making_time, serves, ingredients, cost"
@@ -36,6 +40,17 @@ module Api
           recipes: recipes
         }, status: :ok
       end
+
+      def show
+        recipe = Recipe.find_by(id: params[:id])
+
+        render json: {
+          message: "Recipe details by id",
+          recipe: recipe
+        }, status: :ok
+      end
+
+
     end
   end
 end
